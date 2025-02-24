@@ -1,0 +1,46 @@
+/* Reset default browser styles */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: Arial, sans-serif;
+ background-color: #f4f4f4;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ text-align: center;
+}
+
+/* Container for centering logo */
+.container {
+ width: 100%;
+ max-width: 1200px;
+ padding: 20px;
+}
+
+/* Styling the logo */
+.logo-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.logo-img {
+ max-width: 300px; /* Ensure the logo is not too large */
+ width: 100%;
+ height: auto;
+}
+
+/* Footer styles */
+.site-footer {
+ position: absolute;
+ bottom: 10px;
+ width: 100%;
+ text-align: center;
+ font-size: 14px;
+ color: #333;
+}
