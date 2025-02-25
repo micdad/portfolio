@@ -1,67 +1,99 @@
-/* Reset default margins and set up a full-height flex container */
-body {
-    background-color: white;
+/* Reset some default browser styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-/* Header styling for top navigation */
+/* Body and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header styles */
 .site-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-/* Left navigation icons */
-.left-nav {
-    display: flex;
-    gap: 10px; /* Small gap between icons as per description */
-}
-
-.left-nav img {
-    width: 15px; /* Icons are 12-15 pixels in size */
-    height: 15px;
-}
-
-/* Right menu with "N" */
-.right-menu button {
-    font-size: 20px; /* "N" is 20-25 pixels in height */
-    font-family: serif; /* Serif font as specified */
-    color: black;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Main content area, centered vertically and horizontally */
-main {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; /* Takes remaining space to center content */
+    width: 100%;
 }
 
 /* Logo container */
 .logo-container {
-    margin-bottom: 20px; /* Space between logo and tagline */
-}
-
-.logo-img {
-    height: 120px; /* Logo height is 100-120 pixels */
-    width: auto; /* Width is 400-450 pixels in the image, maintained via aspect ratio */
-}
-
-/* Tagline styling */
-.motto-container h1 {
-    font-size: 20px; /* Tagline is 20-25 pixels */
     text-align: center;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif; /* Standard sans-serif font */
-    line-height: 1.5; /* To space out the line break naturally */
+}
+
+/* Logo animation */
+.logo-img {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start slightly smaller */
+    animation: fadeInScale 1.5s ease-out forwards, draw 2s ease forwards;
+}
+
+/* Motto Section */
+.motto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    width: 100%;
+}
+
+/* Motto Text */
+#motto {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Soft Pulse Effect */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out 4s; /* Starts pulsing after 4s */
+}
+
+/* Logo Fade-In and Scale Animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Logo SVG Drawing Effect */
+@keyframes draw {
+    from {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
