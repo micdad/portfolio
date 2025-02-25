@@ -65,3 +65,40 @@ body.onload #motto {
   max-width: 800px; /* Adjust as needed */
   height: auto;
 }
+
+/* Motto container styling */
+.motto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Motto text styling */
+#motto {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    white-space: nowrap; /* Ensures text stays on a single line */
+    overflow: hidden; /* Prevents text from appearing before typing effect */
+}
+
+/* Fade-in effect for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Soft pulse effect after typing completes */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite ease-in-out 1s; /* Starts 1s after typing finishes */
+}
