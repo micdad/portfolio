@@ -28,21 +28,43 @@ body {
 }
 
 .logo-img {
-    max-width: 500%; /* Ensure logo takes full width of its container */
+    width: 200px; /* Initial size */
     height: auto;
-    display: block;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1.5s ease-in-out forwards;
 }
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
 
 #motto {
+    font-size: 1rem; /* Smaller font size */
+    font-weight: 300; /* Less bold */
     text-align: center;
-    font-size: 1em; /* Reduced motto font size */
     opacity: 0;
-    transition: opacity 1s ease-in-out;
     white-space: nowrap;
     overflow: hidden;
-    margin-top: -5px;
+    margin-top: -10px;
 }
 
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Pulse effect after typing completes */
 #motto.pulse {
     animation: pulse 2s infinite ease-in-out;
 }
@@ -51,32 +73,4 @@ body {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
-}
-
-body.onload #motto {
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* Removed redundant motto container styling */
-
-/* Fade-in effect for smooth appearance */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Soft pulse effect after typing completes */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    500% { transform: scale(1); }
-}
-
-.pulse {
-    animation: pulse 1.5s infinite ease-in-out 1s;
 }
