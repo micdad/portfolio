@@ -61,7 +61,7 @@ body.onload #motto {
 
 /* Adjust logo image for responsiveness */
 .logo-img {
-  width: 100%; /* Adjust as needed */
+  width: 200%; /* Adjust as needed */
   max-width: 800px; /* Adjust as needed */
   height: auto;
 }
