@@ -1,3 +1,4 @@
+/* Reset default margins and set up a full-height flex container */
 body {
     background-color: white;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     min-height: 100vh;
 }
 
+/* Header styling for top navigation */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -15,6 +17,28 @@ body {
     padding: 10px 20px;
 }
 
+/* Left navigation icons */
+.left-nav {
+    display: flex;
+    gap: 10px; /* Small gap between icons as per description */
+}
+
+.left-nav img {
+    width: 15px; /* Icons are 12-15 pixels in size */
+    height: 15px;
+}
+
+/* Right menu with "N" */
+.right-menu button {
+    font-size: 20px; /* "N" is 20-25 pixels in height */
+    font-family: serif; /* Serif font as specified */
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Main content area, centered vertically and horizontally */
 main {
     display: flex;
     flex-direction: column;
