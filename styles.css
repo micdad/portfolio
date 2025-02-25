@@ -24,22 +24,23 @@ body {
 
 .logo-container {
     text-align: center;
-    width: 80%; /* Limit logo width to allow for more space above and below */
+    width: 100%; /* Limit logo width to allow for more space above and below */
 }
 
 .logo-img {
-    max-width: 350%; /* Ensure logo takes full width of its container */
+    max-width: 500%; /* Ensure logo takes full width of its container */
     height: auto;
     display: block;
 }
 
 #motto {
     text-align: center;
-    font-size: 0.5em; /* Reduced motto font size */
+    font-size: 1em; /* Reduced motto font size */
     opacity: 0;
     transition: opacity 1s ease-in-out;
     white-space: nowrap;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 #motto.pulse {
