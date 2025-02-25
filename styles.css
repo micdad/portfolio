@@ -1,76 +1,43 @@
 body {
+    background-color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    align-items: center; /* Center content horizontally */
 }
 
 .site-header {
     display: flex;
-    flex-direction: column; /* Stack logo and motto vertically */
-    align-items: center; /* Center items within the header */
-    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Takes remaining space to center content */
 }
 
+/* Logo container */
 .logo-container {
-    text-align: center;
-    width: 100%; /* Limit logo width to allow for more space above and below */
+    margin-bottom: 20px; /* Space between logo and tagline */
 }
 
 .logo-img {
-    width: 200px; /* Initial size */
-    height: auto;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeInScale 1.5s ease-in-out forwards;
+    height: 120px; /* Logo height is 100-120 pixels */
+    width: auto; /* Width is 400-450 pixels in the image, maintained via aspect ratio */
 }
 
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1.2);
-
-#motto {
-    font-size: 1rem; /* Smaller font size */
-    font-weight: 300; /* Less bold */
+/* Tagline styling */
+.motto-container h1 {
+    font-size: 20px; /* Tagline is 20-25 pixels */
     text-align: center;
-    opacity: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-top: -10px;
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Smooth fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Pulse effect after typing completes */
-#motto.pulse {
-    animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    color: black;
+    font-family: Arial, Helvetica, sans-serif; /* Standard sans-serif font */
+    line-height: 1.5; /* To space out the line break naturally */
 }
