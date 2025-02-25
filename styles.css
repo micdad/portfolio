@@ -11,7 +11,7 @@ body {
 }
 
 .logo-svg {
-    width: 100%;
+    width: 200%;
     height: auto;
     stroke-dasharray: 500; /* Adjust based on SVG complexity */
     stroke-dashoffset: 500;
