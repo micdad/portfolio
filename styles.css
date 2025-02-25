@@ -18,29 +18,6 @@ body {
     animation: draw 2s ease-in-out forwards, fadeInFill 1s ease-in-out 2s forwards;
 }
 
-/* Stroke drawing animation */
-@keyframes draw {
-    0% {
-        stroke-dashoffset: 500;
-        opacity: 0;
-    }
-    100% {
-        stroke-dashoffset: 0;
-        opacity: 1;
-    }
-}
-
-/* Smooth fade-in and fill effect */
-@keyframes fadeInFill {
-    0% {
-        fill: transparent;
-        opacity: 0;
-    }
-    100% {
-        fill: currentColor; /* Uses the defined text color */
-        opacity: 1;
-    }
-}
 /* Keyframes for drawing effect */
 @keyframes draw {
     to {
