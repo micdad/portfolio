@@ -36,7 +36,6 @@ body {
 #motto {
     text-align: center;
     font-size: 0.5em; /* Reduced motto font size */
-    margin-top: 0px; /* Reduced space between logo and motto */
     opacity: 0;
     transition: opacity 1s ease-in-out;
     white-space: nowrap;
