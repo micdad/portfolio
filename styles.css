@@ -1,53 +1,67 @@
-/* Reset some default browser styles */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light grey background */
-    color: #333; /* Dark text for contrast */
-    line-height: 1.6;
+    font-family: sans-serif; /* Or your preferred font */
+    background-color: white; /* Or your preferred background color */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-/* Header styles */
 .site-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    padding: 20px 0;
 }
 
-/* Logo container */
+.container {
+    width: 90%; /* Adjust as needed */
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
 .logo-container {
     text-align: center;
 }
 
-/* Logo animation */
 .logo-img {
-    max-width: 200px; /* Adjust size as needed */
+    max-width: 100%;
     height: auto;
-    opacity: 0; /* Start invisible */
-    transform: scale(0.8); /* Start slightly smaller */
-    animation: fadeInScale 1.5s ease-out forwards;
+    display: block;
 }
 
-/* Keyframes for logo animation */
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+#motto {
+    text-align: center;
+    font-size: 1.5em; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#motto.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Add fade-in animation for the motto */
+body.onload #motto {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Adjust logo image for responsiveness */
+.logo-img {
+  width: 90%; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
+  height: auto;
 }
