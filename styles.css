@@ -7,48 +7,100 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: white; /* Match the image background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.content-wrapper {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.logo-container img {
-    max-width: 80%; /* Adjust as needed */
-    height: auto;
-    opacity: 0;
-    transform: translateY(-20px); /* Start slightly above */
-    animation: fadeInSlide 1.5s ease-out forwards;
+.site-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.motto-container {
-    margin-top: 30px; /* Adjust spacing */
-    opacity: 0;
-    transform: translateY(20px); /* Start slightly below */
-    animation: fadeInSlide 1.5s ease-out forwards 0.5s; /* Delay for staggered animation */
-}
-
-#motto {
-    font-size: 1.2rem; /* Adjust font size */
-    letter-spacing: 1px; /* Adjust letter spacing */
+.logo-container {
     text-align: center;
 }
 
-/* Animations */
-@keyframes fadeInSlide {
+.logo-img {
+    max-width: 300px; /* Increased logo size */
+    height: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards, draw 2s ease forwards;
+}
+
+.motto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    width: 100%;
+}
+
+#motto {
+    font-size: 1.7rem; /* slightly reduced motto font size */
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1s;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    letter-spacing: .15em;
+    animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out 4s;
+}
+
+@keyframes fadeInScale {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Or -20px for logo */
+        transform: scale(0.8);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
+}
+
+@keyframes draw {
+    from {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }
