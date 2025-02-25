@@ -1,15 +1,14 @@
-/* Reset some default browser styles */
+/* styles.css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and background color */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light grey background */
-    color: #333; /* Dark text for contrast */
+    background-color: #f0f0f0;
+    color: #333;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -18,7 +17,6 @@ body {
     height: 100vh;
 }
 
-/* Header styles */
 .site-header {
     display: flex;
     justify-content: center;
@@ -26,21 +24,18 @@ body {
     width: 100%;
 }
 
-/* Logo container */
 .logo-container {
     text-align: center;
 }
 
-/* Logo animation */
 .logo-img {
-    max-width: 200px; /* Adjust size as needed */
+    max-width: 200px;
     height: auto;
-    opacity: 0; /* Start invisible */
-    transform: scale(0.8); /* Start slightly smaller */
-    animation: fadeInScale 1.5s ease-out forwards, draw 2s ease forwards;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards, draw 2s ease forwards;
 }
 
-/* Motto Section */
 .motto-container {
     display: flex;
     justify-content: center;
@@ -50,21 +45,25 @@ body {
     width: 100%;
 }
 
-/* Motto Text */
 #motto {
     font-size: 2rem;
     font-weight: bold;
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 1.5s forwards 1s;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    letter-spacing: .15em;
+    animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret .75s step-end infinite;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Soft Pulse Effect */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -72,10 +71,9 @@ body {
 }
 
 .pulse {
-    animation: pulse 2s infinite ease-in-out 4s; /* Starts pulsing after 4s */
+    animation: pulse 2s infinite ease-in-out 4s;
 }
 
-/* Logo Fade-In and Scale Animation */
 @keyframes fadeInScale {
     0% {
         opacity: 0;
@@ -87,7 +85,6 @@ body {
     }
 }
 
-/* Logo SVG Drawing Effect */
 @keyframes draw {
     from {
         stroke-dasharray: 500;
@@ -96,4 +93,14 @@ body {
     to {
         stroke-dashoffset: 0;
     }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }
