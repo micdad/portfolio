@@ -43,6 +43,38 @@ body {
  animation: draw 2s ease forwards;
 }
 
+.motto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+#motto {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Soft pulse effect */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out 4s; /* Delayed to start after typing */
+}
+
 /* Keyframes for logo animation */
 @keyframes fadeInScale {
  0% {
