@@ -24,11 +24,11 @@ body {
 
 .logo-container {
     text-align: center;
-    width: 200%; /* Limit logo width to allow for more space above and below */
+    width: 80%; /* Limit logo width to allow for more space above and below */
 }
 
 .logo-img {
-    max-width: 100%; /* Ensure logo takes full width of its container */
+    max-width: 350%; /* Ensure logo takes full width of its container */
     height: auto;
     display: block;
 }
