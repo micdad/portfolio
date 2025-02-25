@@ -1,36 +1,53 @@
-/* styles.css */
+/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body and background color */
 body {
     font-family: Arial, sans-serif;
-    background-color: white; /* Match the image background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.content-wrapper {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.logo-container img {
-    max-width: 80%; /* Adjust as needed */
-    height: auto;
+/* Header styles */
+.site-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.motto-container {
-    margin-top: 30px; /* Adjust spacing */
-}
-
-#motto {
-    font-size: 1.2rem; /* Adjust font size */
-    letter-spacing: 1px; /* Adjust letter spacing */
+/* Logo container */
+.logo-container {
     text-align: center;
+}
+
+/* Logo animation */
+.logo-img {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start slightly smaller */
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+/* Keyframes for logo animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
