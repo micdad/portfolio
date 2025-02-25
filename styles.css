@@ -24,7 +24,7 @@ body {
 
 .logo-container {
     text-align: center;
-    width: 80%; /* Limit logo width to allow for more space above and below */
+    width: 200%; /* Limit logo width to allow for more space above and below */
 }
 
 .logo-img {
@@ -35,8 +35,8 @@ body {
 
 #motto {
     text-align: center;
-    font-size: 1em; /* Reduced motto font size */
-    margin-top: 10px; /* Reduced space between logo and motto */
+    font-size: 0.5em; /* Reduced motto font size */
+    margin-top: 0px; /* Reduced space between logo and motto */
     opacity: 0;
     transition: opacity 1s ease-in-out;
     white-space: nowrap;
