@@ -1,46 +1,53 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background color */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header styles */
+.site-header {
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    width: 100%;
 }
 
+/* Logo container */
 .logo-container {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.motto-container {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: bold;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid black; /* Cursor effect */
-    width: 0;
-    visibility: hidden;
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+/* Logo animation */
+.logo-img {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start slightly smaller */
+    animation: fadeInScale 1.5s ease-out forwards;
 }
 
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Show motto after logo fades in */
-.show-motto {
-    visibility: visible;
-    animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+/* Keyframes for logo animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
