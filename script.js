@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-        const motto = document.getElementById("motto");
-        motto.classList.add("show-motto");
-        typeEffect(motto, "Characters Built in Space. Stories Lived.");
-    }, 2000); // Wait for logo animation to finish
-});
+ const text = "Characters Built in Space. Stories Lived.";
+ const mottoElement = document.getElementById("motto");
+ let index = 0;
 
-function typeEffect(element, text, speed = 100) {
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
+ function typeEffect() {
+     if (index < text.length) {
+         mottoElement.innerHTML += text.charAt(index);
+         index++;
+         setTimeout(typeEffect, 100); // Adjust speed here
+     } else {
+         mottoElement.classList.add("pulse"); // Add pulse effect after typing
+     }
+ }
+
+ setTimeout(typeEffect, 1500); // Start typing after fade-in
+});
